@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niceguy <niceguy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:53:45 by niceguy           #+#    #+#             */
-/*   Updated: 2023/12/04 20:49:00 by niceguy          ###   ########.fr       */
+/*   Updated: 2023/12/05 15:27:18 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,17 @@ ClapTrap::ClapTrap(std::string name, unsigned int hitPoints, unsigned int energy
 	std::cout << "Claptrap name constructor " << name << std::endl;
 }
 
-void	ClapTrap::attack(const std::string& target) {
+void	ClapTrap::attack(const std::string& target)
+{
 	if (_hitPoints == 0 || _energyPoints == 0)
-		return; 
+	{
+		std::cout << "Claptrap named " << _name << " cannot attack because ";
+		if (_hitPoints == 0)
+			std::cout << "it died!" << std::endl;
+		else if (_energyPoints == 0)
+			std::cout << "it ran out of energy!" << std::endl; 
+		return;
+	}
 	_energyPoints--;
 	std::cout << "Claptrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
 }
@@ -48,8 +56,15 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if (_hitPoints == 0 || _energyPoints == 0)
+	{
+		std::cout << "Claptrap named " << _name << " cannot repair itself because ";
+		if (_hitPoints == 0)
+			std::cout << "it died!" << std::endl;
+		else if (_energyPoints == 0)
+			std::cout << "it ran out of energy!" << std::endl; 
 		return;
+	}
 	_energyPoints--;
-	_hitPoints = amount;
+	_hitPoints += amount;
 	std::cout << "Claptrap " << _name << " repaired itself for " << amount << " hit points!" << std::endl;
 }
