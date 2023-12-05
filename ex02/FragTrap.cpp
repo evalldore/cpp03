@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niceguy <niceguy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:36:52 by niceguy           #+#    #+#             */
-/*   Updated: 2023/12/04 23:05:22 by niceguy          ###   ########.fr       */
+/*   Updated: 2023/12/05 16:31:14 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,14 @@ void FragTrap::highFivesGuys(void) const {
 void	FragTrap::attack(const std::string& target)
 {
 	if (_hitPoints == 0 || _energyPoints == 0)
-		return; 
+	{
+		std::cout << "Fragtrap named " << _name << " cannot attack because ";
+		if (_hitPoints == 0)
+			std::cout << "it died!" << std::endl;
+		else if (_energyPoints == 0)
+			std::cout << "it ran out of energy!" << std::endl; 
+		return;
+	}
 	_energyPoints--;
 	std::cout << "FragTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
 }
