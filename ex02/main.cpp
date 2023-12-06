@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niceguy <niceguy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:53:57 by niceguy           #+#    #+#             */
-/*   Updated: 2023/12/04 23:06:05 by niceguy          ###   ########.fr       */
+/*   Updated: 2023/12/06 16:57:39 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ int main(void) {
 	FragTrap	b("Morgan");
 
 	a.highFivesGuys();
-	a.attack("Eric");
-	a.attack("Eric");
-	a.attack("Eric");
-	a.beRepaired(6);
-	a.attack("Eric");
+	for (int i = 0; i < 100; i++)
+	{
+		b.attack("Doodoo");
+		b.beRepaired(1);
+		if ((i % 3) == 0)
+			b.takeDamage(3);
+	}
 }

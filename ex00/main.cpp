@@ -6,7 +6,7 @@
 /*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:53:57 by niceguy           #+#    #+#             */
-/*   Updated: 2023/12/05 15:22:16 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:58:52 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int main(void) {
 	{
 		b.attack("Doodoo");
 		b.beRepaired(1);
+		b.takeDamage(10);
 	}
 }
